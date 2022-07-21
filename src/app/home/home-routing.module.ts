@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from '../app.component';
 import { BasketComponent } from '../pages/basket/basket.component';
 import { EventBrowserComponent } from '../pages/event-browser/event-browser.component';
+import { HomeComponent } from './home.component';
 
 const routes: Routes = 
   [
     {
       path: '',
-      component: AppComponent,
+      component: HomeComponent,
       children: [
         { path: '', redirectTo: '/event-browser', pathMatch: 'full' },
         {
