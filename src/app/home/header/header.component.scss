@@ -6,6 +6,12 @@
   width: 100%;
 }
 
-::ng-deep .mat-form-field-wrapper{
-    margin-bottom: -1.25em !important;
- }
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: -1.25em !important;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
