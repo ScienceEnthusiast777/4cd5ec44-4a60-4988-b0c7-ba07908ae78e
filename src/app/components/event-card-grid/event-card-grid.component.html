@@ -1,0 +1,48 @@
+<div class="container">
+  <ng-container *ngIf="events">
+    <mat-grid-list cols="3" rowHeight="1:2">
+      <mat-grid-tile *ngFor="let event of events">
+        <mat-card class="event-card">
+          <mat-card-header>
+            <div mat-card-avatar class="avatar"></div>
+            <mat-card-title>{{ event.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="image-boundary">
+            <img
+              mat-card-image
+              src="{{ event.flyerFront }}"
+              alt="event-photo"
+            />
+          </mat-card-content>
+          <div class="footer">
+            <div class="venue">
+              <a href="{{ event.venue.direction }}" target="_blank"
+                ><mat-icon color="primary">place</mat-icon></a
+              >
+              <h6>{{ event.venue.name }}</h6>
+            </div>
+            <div class="times">
+              <mat-card-subtitle
+                >| Starts:
+                {{
+                  event.startTime | date: "dd/MM/yy HH:mm:ss"
+                }}</mat-card-subtitle
+              >
+              <mat-card-subtitle
+                >| Ends:
+                {{
+                  event.endTime | date: "dd/MM/yy HH:mm:ss"
+                }}</mat-card-subtitle
+              >
+            </div>
+            <div class="add-event">
+              <button mat-mini-fab color="primary">
+                <mat-icon>add </mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </ng-container>
+</div>
