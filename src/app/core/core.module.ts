@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatCardModule,
     MatGridListModule,
+    MatDatepickerModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -31,6 +33,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatInputModule,
     MatCardModule,
     MatGridListModule,
+    MatDatepickerModule,
   ],
 })
 export class CoreModule {}

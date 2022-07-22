@@ -1,0 +1,85 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.date-header {
+  width: 100%;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.tiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 800px
+}
+
+.event-card {
+  width: 250px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.avatar {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+mat-card-title {
+  font-size: x-small !important;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: x-small !important;
+}
+
+mat-card-header {
+  padding: 5px;
+}
+
+.add-event {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.image-boundary {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-boundary img {
+  height: 130%;
+  object-fit: cover;
+}
+
+.footer {
+  padding: 5px;
+}
+
+.venue {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+mat-card {
+  margin: 0px;
+  padding: 0px;
+}
