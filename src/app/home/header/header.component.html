@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="mat-elevation-z5">
+  <div class="toolbar-container">
+    <div class="left">
+      <form [formGroup]="group">
+        <mat-form-field style="font-size: 10px" appearance="outline">
+          <input formControlName="searchFilter" matInput />
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+      </form>
+      <button mat-icon-button><mat-icon>filter_list</mat-icon></button>
+    </div>
+    <div class="right">
+      <button mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
+    </div>
+  </div>
+</mat-toolbar>

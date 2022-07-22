@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$events-app-primary: mat-palette($mat-light-blue);
+$events-app-accent:  mat-palette($mat-cyan);
+$events-app-warn:    mat-palette($mat-deep-orange);
+$events-app-theme: mat-light-theme($events-app-primary, $events-app-accent, $events-app-warn);
+@include angular-material-theme($events-app-theme);
