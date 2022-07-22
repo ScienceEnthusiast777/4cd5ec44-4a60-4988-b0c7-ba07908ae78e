@@ -1,3 +1,4 @@
+import { KeyValue } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +14,10 @@ export class EventCardGridComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.events)
+  }
+
+  public keyOrder = (a: KeyValue<string,any>, b: KeyValue<string,any>): number => {
+    return <any>new Date(a.key) - <any>new Date(b.key)
   }
 
 }

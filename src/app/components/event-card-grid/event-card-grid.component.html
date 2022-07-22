@@ -1,7 +1,10 @@
 <div class="container">
-  <ng-container *ngIf="events">
-    <mat-grid-list cols="3" rowHeight="1:2">
-      <mat-grid-tile *ngFor="let event of events">
+  <div class="tiles">
+    <ng-container *ngFor="let date of events | keyvalue: keyOrder">
+      <div class="date-header">
+        <h3>{{ date.key | date: "fullDate" }}</h3>
+      </div>
+      <ng-container *ngFor="let event of date.value">
         <mat-card class="event-card">
           <mat-card-header>
             <div mat-card-avatar class="avatar"></div>
@@ -11,6 +14,7 @@
             <img
               mat-card-image
               src="{{ event.flyerFront }}"
+              onerror="this.onerror=null;this.src='/assets/images/no-flyer.png';"
               alt="event-photo"
             />
           </mat-card-content>
@@ -42,7 +46,7 @@
             </div>
           </div>
         </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>
