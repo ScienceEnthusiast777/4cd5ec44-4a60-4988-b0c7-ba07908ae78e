@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 mat-dialog-title>Your basket</h1>
+  <div mat-dialog-content>
+    <mat-list>
+      <mat-list-item *ngFor="let event of cart">
+        <div mat-line>{{ event.title }}</div>
+        <div mat-line>{{ event.date | date: "fullDate" }}</div>
+        <div mat-line>
+          <mat-icon mat-list-icon color="primary">place</mat-icon
+          >{{ event.venue.name }}
+        </div>
+        <mat-icon class="remove" (click)="removeFromCart(event)" mat-list-icon
+          >remove_shopping_cart</mat-icon
+        >
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <p>
+    {{
+      cart.length === 0
+        ? "Basket empty"
+        : cart.length + " " + "item(s) in basket"
+    }}
+  </p>
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" mat-dialog-close>Close</button>
+  </div>
+</div>
