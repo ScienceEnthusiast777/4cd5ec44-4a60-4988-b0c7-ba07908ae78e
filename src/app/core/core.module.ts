@@ -11,7 +11,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [],
@@ -28,7 +29,8 @@ import {MatListModule} from '@angular/material/list';
     MatDatepickerModule,
     MatBadgeModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatChipsModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -42,7 +44,8 @@ import {MatListModule} from '@angular/material/list';
     MatDatepickerModule,
     MatBadgeModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatChipsModule,
   ],
 })
 export class CoreModule {}

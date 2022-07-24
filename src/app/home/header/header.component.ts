@@ -13,6 +13,7 @@ import { ShoppingCartService } from 'src/app/core/services/shopping-cart.service
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  public chips: any[] = [];
   public cart: any[] = [];
   public group = new FormGroup({
     searchFilter: new FormControl(),
@@ -38,7 +39,18 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(FilterDialogComponent);
     dialogRef.afterClosed().subscribe((res) => {
       this.headerSearchService.emitDateRange(res.data);
+      this.chips = [
+        {
+          start: res.data.start,
+          end: res.data.end,
+        },
+      ];
     });
+  }
+
+  public removeFilter() {
+    this.chips = [];
+    this.headerSearchService.emitDateRange({ start: null, end: null });
   }
 
   ngOnInit(): void {
