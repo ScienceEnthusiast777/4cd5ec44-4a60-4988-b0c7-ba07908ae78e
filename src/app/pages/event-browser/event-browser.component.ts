@@ -28,7 +28,8 @@ export class EventBrowserComponent implements OnInit {
       this.apiService.getEvents(),
       this.headerSearchService.search$.pipe(startWith({ searchFilter: '' })),
       this.shoppingCartService.cart$,
-    ]).subscribe(([events, search, cart]) => {
+      this.headerSearchService.dateRange$.pipe(startWith(undefined)),
+    ]).subscribe(([events, search, cart, dateRange]) => {
       let filteredEvents = [];
       if (events) {
         filteredEvents = events.filter((event) => {
@@ -43,6 +44,21 @@ export class EventBrowserComponent implements OnInit {
               !event.title
                 .toLowerCase()
                 .includes(search.searchFilter.toLowerCase())
+            ) {
+              return false;
+            }
+          }
+          if (dateRange) {
+            if (dateRange['start'] === null) {
+              return true;
+            }
+            const start = new Date(dateRange['start']);
+            const end = new Date(dateRange['end']) || new Date();
+            const eventDate = new Date(event.date);
+            if (
+              !(start < eventDate && end > eventDate) &&
+              !(start.toDateString() === eventDate.toDateString()) &&
+              !(end.toDateString() === eventDate.toDateString())
             ) {
               return false;
             }
