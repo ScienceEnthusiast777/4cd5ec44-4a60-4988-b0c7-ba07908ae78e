@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { PagesModule } from '../pages/pages.module';
 import { HeaderComponent } from './header/header.component';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [HomeComponent, HeaderComponent],
@@ -16,6 +16,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     CoreModule,
   ],
-  providers: [MatNativeDateModule],
+  providers: [
+    MatNativeDateModule,
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+  ],
 })
 export class HomeModule {}

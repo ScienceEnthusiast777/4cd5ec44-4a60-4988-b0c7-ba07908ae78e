@@ -1,3 +1,4 @@
+<ng-container *ngIf="(events | json) === ({} | json)"><div class="no-events"><h5>No events match that search</h5></div></ng-container>
 <div class="container">
   <div class="tiles">
     <ng-container *ngFor="let date of events | keyvalue: keyOrder">
@@ -20,7 +21,7 @@
           </mat-card-content>
           <div class="footer">
             <div class="venue">
-              <a href="{{ event.venue.direction }}" target="_blank"
+              <a href="{{ 'https://www.google.com/maps/dir//' + event.venue.name + '+london'}}" target="_blank"
                 ><mat-icon color="primary">place</mat-icon></a
               >
               <h6>{{ event.venue.name }}</h6>

@@ -1,0 +1,14 @@
+<form [formGroup]="group">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="From" />
+      <input matEndDate formControlName="end" placeholder="Until" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="apply()">Apply</button>
+</div>
