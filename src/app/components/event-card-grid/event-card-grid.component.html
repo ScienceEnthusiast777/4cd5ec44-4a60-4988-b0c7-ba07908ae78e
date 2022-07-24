@@ -1,9 +1,9 @@
 <div class="container">
   <div class="tiles">
     <ng-container *ngFor="let date of events | keyvalue: keyOrder">
-      <div class="date-header">
+      <mat-toolbar-row class="date-header">
         <h3>{{ date.key | date: "fullDate" }}</h3>
-      </div>
+      </mat-toolbar-row>
       <ng-container *ngFor="let event of date.value">
         <mat-card class="event-card">
           <mat-card-header>
@@ -40,7 +40,7 @@
               >
             </div>
             <div class="add-event">
-              <button mat-mini-fab color="primary">
+              <button (click)="addEvent(event)" mat-mini-fab color="primary">
                 <mat-icon>add </mat-icon>
               </button>
             </div>

@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [],
@@ -23,6 +26,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCardModule,
     MatGridListModule,
     MatDatepickerModule,
+    MatBadgeModule,
+    MatDialogModule,
+    MatListModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -34,6 +40,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCardModule,
     MatGridListModule,
     MatDatepickerModule,
+    MatBadgeModule,
+    MatDialogModule,
+    MatListModule
   ],
 })
 export class CoreModule {}
