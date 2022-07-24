@@ -6,7 +6,6 @@
   width: 100%;
 }
 
-
 ::ng-deep .mat-form-field-wrapper {
   margin-bottom: -1.25em !important;
 }
@@ -14,5 +13,11 @@
 .left {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 3px;
+}
+
+.fix {
+  position: fixed;
+  z-index: 1000;
 }

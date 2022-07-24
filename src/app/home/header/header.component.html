@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z5">
+<mat-toolbar color="primary" class="fix mat-elevation-z5">
   <div class="toolbar-container">
     <div class="left">
       <form [formGroup]="group">
@@ -7,10 +7,28 @@
           <mat-icon matPrefix>search</mat-icon>
         </mat-form-field>
       </form>
-      <button (click)="openFilterDialog()" mat-icon-button><mat-icon>filter_list</mat-icon></button>
+      <button (click)="openFilterDialog()" mat-icon-button>
+        <mat-icon>filter_list</mat-icon>
+      </button>
+      <mat-chip-list>
+        <mat-chip *ngFor="let chip of chips" (removed)="removeFilter()">
+          {{ chip.start | date }} - {{ chip.end | date }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+      </mat-chip-list>
     </div>
     <div class="right">
-      <button (click)="openBasketDialog()" mat-icon-button [matBadgeHidden]="cart?.length === 0" [matBadge]="cart?.length" matBadgeColor="warn" ><mat-icon>shopping_cart</mat-icon></button>
+      <button
+        (click)="openBasketDialog()"
+        mat-icon-button
+        [matBadgeHidden]="cart?.length === 0"
+        [matBadge]="cart?.length"
+        matBadgeColor="warn"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
     </div>
   </div>
 </mat-toolbar>
